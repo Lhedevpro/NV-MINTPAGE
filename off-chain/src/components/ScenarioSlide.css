@@ -1,0 +1,123 @@
+.intro-lore {
+    position: absolute;
+    top: 30px;
+    left: 60%;
+    transform: translateX(-50%);
+    width: 400px;
+    z-index: 10;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid #00ffe1;
+    border-radius: 8px;
+    box-shadow: 0 0 20px #00ffe1;
+    color: #e0f7ff;
+    font-family: 'Orbitron', sans-serif;
+    backdrop-filter: blur(8px);
+  }
+  
+  .lore-main {
+    font-family: 'Orbitron', sans-serif;
+    color: #80ffea;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px #80ffea;
+    margin-bottom: 1rem;
+    opacity: 0.85;
+    line-height: 1.6;
+  }
+  
+  .lore-line {
+    font-family: monospace;
+    color: #0ff;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    text-align: center;
+    opacity: 0.8;
+    padding: 0.5rem;
+    background: rgba(0, 255, 225, 0.1);
+    border-left: 2px solid #00ffe1;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .lore-line:hover {
+    background: rgba(0, 255, 225, 0.25);
+    transform: scale(1.02);
+  }
+
+  .scenario-slide-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.launch-button {
+  padding: 1rem 2rem;
+  background: #00ffe1;
+  color: black;
+  font-family: 'Orbitron', sans-serif;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.slide-image {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 50vw;
+  height: auto;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 1000;
+  transition: opacity 1s ease;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+.slide-image.visible {
+  opacity: 1;
+}
+
+.from-left.visible {
+  transform: translate(-35vw, -25%);
+}
+
+.from-right.visible {
+  transform: translate(-35vw, -25%);
+}
+
+.slide-image.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.slide-message {
+  position: absolute;
+  bottom: -30vh;
+  left: 0%;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 80vw;
+
+  color: #00ffe1;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
+
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid #00ffe1;
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+
+  text-align: center;
+  text-shadow: 0 0 10px #000, 0 0 15px #00ffe1;
+
+  z-index: 9999;
+  pointer-events: none;
+}
+
