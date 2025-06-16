@@ -99,7 +99,7 @@ function Codex() {
         const checkPendingSignatures = async () => {
             if (account) {
                 try {
-                    const response = await axios.get('http://localhost:3001/mission/results');
+                    const response = await axios.get('https://nv-mintpage-5pla.vercel.app/mission/results');
                     if (response.data && response.data.results) {
                         const userAddress = account.toLowerCase();
                         const pendingMissionsForUser = response.data.results
@@ -329,7 +329,7 @@ function Codex() {
             try {
                 setIsLoading(true);
                 setLoadingMessage(`Loading missions (Attempt ${attempt}/${maxRetries})`);
-                const response = await axios.get('http://localhost:3001/mission/missions', {
+                const response = await axios.get('https://nv-mintpage-5pla.vercel.app/mission/missions', {
                     timeout: 10000,
                     headers: {
                         'Accept': 'application/json',
@@ -391,7 +391,7 @@ function Codex() {
 
         try {
             // Vérifier les missions en attente
-            const pendingResponse = await axios.get('http://localhost:3001/mission/results');
+            const pendingResponse = await axios.get('https://nv-mintpage-5pla.vercel.app/mission/results');
             const pendingMissions = pendingResponse.data.results.filter(
                 m => m.address.toLowerCase() === account.toLowerCase() && 
                      m.transactionStatus === 'pending'
@@ -406,7 +406,7 @@ function Codex() {
             }
 
             // Charger les données de la mission pour affichage (pas de résolution ici)
-            const missionResponse = await axios.get('http://localhost:3001/mission/missions');
+            const missionResponse = await axios.get('https://nv-mintpage-5pla.vercel.app/mission/missions');
             const completeMissionData = missionResponse.data.missions.find(m => m.id === mission.id);
             
             if (!completeMissionData) {
@@ -431,7 +431,7 @@ function Codex() {
     const checkPendingMission = async () => {
         try {
             console.log('Vérification des missions en attente...');
-            const response = await axios.get('http://localhost:3001/mission/results');
+            const response = await axios.get('https://nv-mintpage-5pla.vercel.app/mission/results');
             console.log('Réponse du serveur:', response.data);
             
             if (!response.data || !response.data.results) {
@@ -484,7 +484,7 @@ function Codex() {
                 throw new Error('Format de résultats invalide');
             }
 
-            const missionResponse = await axios.get('http://localhost:3001/mission/missions');
+            const missionResponse = await axios.get('https://nv-mintpage-5pla.vercel.app/mission/missions');
             const completeMissionData = missionResponse.data.missions.find(m => m.id === mission.missionId);
             
             if (!completeMissionData) {
@@ -514,7 +514,7 @@ function Codex() {
 
                 // Supprimer l'enregistrement de la mission
                 try {
-                    await axios.delete(`http://localhost:3001/mission/results/${mission.missionId}`);
+                    await axios.delete(`https://nv-mintpage-5pla.vercel.app/mission/results/${mission.missionId}`);
                     console.log('Enregistrement de la mission supprimé');
                 } catch (error) {
                     console.error('Erreur lors de la suppression de l\'enregistrement:', error);
@@ -793,7 +793,7 @@ function Codex() {
             const signature = await signer.signMessage(message);
 
             try {
-                const response = await axios.post('http://localhost:3001/mission/commit', {
+                const response = await axios.post('https://nv-mintpage-5pla.vercel.app/mission/commit', {
                     address: account,
                     heroId: Number(heroStats.tokenId),
                     missionId: savedMissionResults.missionId,
@@ -807,7 +807,7 @@ function Codex() {
                     if (results) {
                         // Supprimer l'enregistrement de la mission
                         try {
-                            await axios.delete(`http://localhost:3001/mission/results/${savedMissionResults.missionId}`);
+                            await axios.delete(`https://nv-mintpage-5pla.vercel.app/mission/results/${savedMissionResults.missionId}`);
                             console.log('Enregistrement de la mission supprimé');
                         } catch (error) {
                             console.error('Erreur lors de la suppression de l\'enregistrement:', error);
@@ -859,7 +859,7 @@ function Codex() {
             setIsLoading(true);
 
             // D'abord résoudre la mission
-            const response = await axios.post('http://localhost:3001/mission/resolve', {
+            const response = await axios.post('https://nv-mintpage-5pla.vercel.app/mission/resolve', {
                 address: account,
                 heroId: Number(heroStats.tokenId),
                 missionId: selectedMission.id,
@@ -880,7 +880,7 @@ function Codex() {
                 throw new Error('Format de résultats invalide');
             }
 
-            const missionResponse = await axios.get('http://localhost:3001/mission/missions');
+            const missionResponse = await axios.get('https://nv-mintpage-5pla.vercel.app/mission/missions');
             const completeMissionData = missionResponse.data.missions.find(m => m.id === selectedMission.id);
             
             if (!completeMissionData) {
@@ -912,7 +912,7 @@ function Codex() {
 
                 // Supprimer l'enregistrement de la mission
                 try {
-                    await axios.delete(`http://localhost:3001/mission/results/${selectedMission.id}`);
+                    await axios.delete(`https://nv-mintpage-5pla.vercel.app/mission/results/${selectedMission.id}`);
                     console.log('Enregistrement de la mission supprimé');
                 } catch (error) {
                     console.error('Erreur lors de la suppression de l\'enregistrement:', error);
@@ -1117,7 +1117,7 @@ function Codex() {
         for (let attempt = 0; attempt < maxAttempts; attempt++) {
             try {
                 console.log(`Tentative ${attempt + 1}/${maxAttempts} de récupération des résultats...`);
-                const response = await axios.get('http://localhost:3001/mission/results');
+                const response = await axios.get('https://nv-mintpage-5pla.vercel.app/mission/results');
                 
                 if (response.data && response.data.results) {
                     const missionResult = response.data.results.find(
