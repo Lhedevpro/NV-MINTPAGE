@@ -1,0 +1,843 @@
+{
+  "missions": [
+    {
+      "id": 1,
+      "name": "Western Wall Breakthrough",
+      "description": "Break through a secondary checkpoint in a swift and desperate assault.",
+      "contexte": ["\n\nNEON VERGE doesn't want you. You've got no ID, no pass, no sponsor.",
+        "\nTo them, you're just organic static. Another reject.",
+        "\nBut tonight, the West Wall isn't as silent as usual.",
+        "\nA maintenance sector opened 36 minutes ago.",
+        "\nJust enough time to attempt a breakthrough.",
+        "\nJust enough time to die trying.",
+        "\nYou study the schematics.",
+        "\nNo way back. No backup. No cheating.",
+        "\nYou want into Neon Verge? Fine.",
+        "\nBut the city won't open the door.",
+        "\nYou'll have to rip it off its hinges."],
+      "difficulty": 4,
+      "requiredStats": [true, false, false, false, false, false],
+      "requireresult": 3,
+      "totalsteps": 5,
+      "test": [5, 10, 15, 10, 5],
+      "bonus": [15, 20, 5, 10, 20],
+      "STRscreenscene": ["the-plan-badlands.png", "westwall-maintenancezone.png", "westwall-maintenancezone.png", "wallmaintenance-Bot.png", "cockpitZone.png", "dorelocked-reset.png"],
+      "STRcontextescene": [
+
+        ["\n\nThe night is heavy. You adjust your makeshift exo-plastron, stolen off a dead courier in the dunes.",
+        "\nYour weapon blinks: charge at 83%. There will only be one shot.",
+        "\n300 meters ahead: checkpoint 74B of the West Wall.",
+        "\nTwo autonomous turrets.",
+        "\nOne human sentry.",
+        "\nA blind spot between two unstable pylons.",
+        "\nYou inhale. You run."],
+
+        ["\n\nThe spotlight locks on in 0.3 seconds.",
+        "\nThe first turret targets you.",
+        "\nYou shoot first.",
+        "\nThe impact blows out the sensor plate.",
+        "\nA scream. The alarm.",
+        "\nYou slide under flaming barbed wire.",
+        "\nA shard tears into your hip. You keep going."],
+
+        ["\n\nThe service door is reinforced. But the cable hatch below is rusted through.",
+        "\nYou rip off the plate with your powered arm.",
+        "\nA maintenance bot tries to block your path.",
+        "\nYou smash it against the wall. Sparks. Plasma stench.",
+        "\nYou crawl into the conduit. 20 meters. You're bleeding."],
+
+        ["\n\nYou emerge in an empty room. Screens flash sector-wide alerts.",
+        "\nYou jam your spike into the console.",
+        "\n30 seconds to kill the cameras.",
+        "\nYou see your own face in infrared.",
+        "\nYour breath is ragged.",
+        "\nYou're inside."
+        ],
+
+        ["\n\nYou lock the doors behind you. Collapse against the wall.",
+        "\nBlood drips onto white tiles.",
+        "\nYou laugh. You cry.",
+        "\nA screen lights up:",
+        "\n“Intrusion detected. Response unit deployed.”",
+        "\nYou made it in.",
+        "\nBut this is just the beginning."
+        ]
+      ],
+      "STRgoodscene": [["\n\nYou crouch behind a rusted frame.",
+        "\nThe spotlight sweeps. Slow. Predictable.",
+        "\nBreathe.",
+        "\nYou launch.",
+        "\nA flash — too late.",
+        "\nYou're already through.",
+        "\nOne breath. No hesitation. You burn forward."],
+
+        ["\n\nHomemade rifle. One shot. That's all.",
+        "\nTurret pivots.",
+        "\nBANG.",
+        "\nIt detonates before lock-on.",
+        "\nA guard turns —",
+        "\nYou crash into his visor, full force.",
+        "\nNo pause.",
+        "\nYou knee through a mesh gate. The path opens."],
+
+        ["\n\nYou hit the hatch. Two rusted bolts.",
+        "\nFoot down. Crack. It gives.",
+        "\nYou slide into the metal guts — each scrape tears skin.",
+        "\nSparks flicker in the dark.",
+        "\nYou crawl out, gasping. Still breathing."],
+
+        ["\n\nControl room.",
+        "\nYou kick the door off the hinges.",
+        "\nTwo drones rise —",
+        "\nToo slow. You toss an impulse grenade.",
+        "\nFlash.",
+        "\nSilence.",
+        "\nSpike goes in: admin access granted.",
+        "\nSystem flips to maintenance mode."],
+
+        ["\nThe hatch unlocks.",
+        "\nMetal air. Sweet and toxic.",
+        "\nYou wince. You bleed. You grin.",
+        "\nYou just broke the game.",
+        "\nNow you're inside.",
+        "\nIn the shadow of an empire no one ever gave you permission to touch."]],
+
+      "STRbadscene": [
+        ["\n\nYou want to run. Legs locked in.",
+        "\nBut pain lights up your rib — just long enough to freeze.",
+        "\nToo late. The spotlight grabs you before you even break cover.",
+        "\nBOOM. Non-lethal round slams into your shoulder.",
+        "\nYou roll, groan, fire into nothing.",
+        "\nTurrets come alive. You're already marked."],
+
+        ["\n\nfire. Miss. The turret doesn't even flinch.",
+        "\nThe sentry screams a warning. You aim for the helmet — miss by inches.",
+        "\nThe response is instant: your leg detonates under a paralysis round.",
+        "\nYou crawl under burning wire, but a drone's already on your ass.",
+        "\nOne jolt — breath gone. System stuttering."],
+
+        ["\n\nYou reach the hatch. Rusted, yeah — but welded shut.",
+        "\nYou yank. You scream. You don't have the torque.",
+        "\nTurret Two's already recalibrated.",
+        "\nA laser drills into the duct beside you.",
+        "\nYou dive in anyway. Metal flays your skin.",
+        "\nToo slow. Blackout hits."],
+
+        ["\n\nYou stumble into the control room, limping like a ghost.",
+        "\nSpike in. 403 ERROR. Wrong firmware.",
+        "\nYou claw open an emergency panel.",
+        "\nToo late. Lights shift red.",
+        "\nA cold synthetic voice says:",
+        "\n“Neutralization imminent.”",
+        "\nYou clench your jaw."],
+
+        ["\n\nA door hisses open.",
+        "\nThree response drones. Not built to kill — just to break.",
+        "\nYou pull the trigger — empty.",
+        "\nThey slam you down.",
+        "\nNeedle in the neck.",
+        "\nYou fight for two more seconds. Then silence.",
+        "\nFailure.",
+        "\nYou'll wake up… somewhere else.",
+        "\nBut it won't be the game anymore."]
+      ]
+    },
+    {
+      "id": 2,
+      "name": "VG-07",
+      "description": "Extraction under stress",
+      "contexte": ["\n\nBilly's waiting for you in a wrecked shack on the edge of Sector 6.",
+        "\nSmells like ozone. Walls soaked in graffiti—encrypted messages.",
+        "He hands you a half-burned laminated card.",
+        "\nBilly:",
+        "\n“VG-07. Old tactical weapons silo. Buried. Locked down. Rotting to the core.",
+        "This ain’t a stroll, it’s a test. There’s a sealed crate down there, and what’s inside could make or break alliances.",
+        "You think you’ve got what it takes? Doesn’t matter how you do it.",
+        "Just come back with the damn box.“",
+        "\nHe chews on an old adrenaline stick. Spits.",
+        "\nBilly (getting up):",
+        "\n“You want your name to mean something in this fucked-up world?",
+          "Then go carve it out with your teeth.”"],
+      "difficulty": 3,
+      "requiredStats": [false, true, true, false, false, false],
+      "requireresult": 3,
+      "totalsteps": 7,
+      "test": [3, 10, 15, 10, 5, 10, 5],
+      "bonus": [30, 20, 5, 10, 20, 10, 20],
+      "DEXscreenscene": ["billy-inside.png", "hiden-enter.png", "spirale-stare.png", "sound-room.png", "indus-flan.png", "lazer-room.png", "storage-drone.png", "VG-07.png"],
+      "DEXcontextescene": [["\n\nYou crawl through the rain in a no man's land of twisted metal.",
+        "\nAhead, the silo's main entrance is buried under a landslide of collapsed turrets.",
+        "\nBut to the right, a section of wall has given way—",
+        "\nJust wide enough for a slim body to slip through.",
+        "\nWhat you feel:",
+        "\nLive cables hum like vocal cords.",
+        "\nYou hold your breath and slide in, shoulder scraping against jagged concrete.",
+        "\nYour leg brushes against a patch of grey moss — acid-burn sting.",
+        "\nA disabled turret watches you.",
+        "\nYou pull your hand back a split second before it flickers.",
+        "\nYou make it through."],
+
+        ["\n\nA half-collapsed spiral staircase leads down into the lower levels.",
+        "\nEach step groans under your weight.",
+        "\nAnti-theft blades jut out from the railing.",
+        "\nOne wrong jump and you'll end up skewered or crushed."],
+
+        ["\n\nA rectangular room, drowned in pulsing red light.",
+        "\nThe floor is laced with a grid of sound sensors.",
+        "\nAny noise above 30 dB triggers a moving blade wall."],
+
+        ["\n\nA maintenance duct.",
+        "A massive industrial fan spins, slow and deliberate—blade by blade.",
+        "A single opening every 9 seconds.",
+        "\nYou feel the wind chopped to pieces,",
+        "like the breath of some dying beast.",
+        "You sync your breathing."],
+
+        ["\n\nA zigzag tunnel riddled with crossed lasers.",
+        "\nNot lethal beams—worse: trackers.",
+        "\nTouch one, and it's global alert."],
+
+        ["\n\nYou reach the supply chamber.",
+        "\nA silent drone circles the room, scanning with its thermal eye.",
+        "\nIt sees heat — not motion."],
+
+        ["\n\nThere it is. The VG-07 crate.",
+        "\nNot locked by mechanics—no.",
+        "\nIt's rigged with a reverse-pressure system:",
+        "\nPull too fast = alarm.",
+        "\nPull too slow = the base flags a theft attempt."]
+      ],
+      "DEXgoodscene": [
+        ["\n\nYou slip through the gap like a blade into open flesh.",
+        "\nThe wall exhales green vapor, but you hold your breath, eyes narrowed.",
+        "\nYour jacket snags on a shard of steel—you don't stop.",
+        "\nYou make it. You're not bleeding.",
+        "\nJust shaking, a little."],
+
+        ["\n\nOne foot down.",
+        "\nThen the other, staggered.",
+        "\nYou feel the tension in the rusted bars—then you jump.",
+        "\nYou land in a crouch, knee slamming into a bolt,",
+        "\nbut your head's already turned.",
+        "\nThe threat's behind you now."],
+
+        ["\n\nYou don't walk. You dance.",
+        "\nEvery step's a gamble. Every foothold, a silent syllable.",
+        "\nThe floor sensors blink, scanning—",
+        "\nbut you don't make enough noise.",
+        "\nYou choke back a sneeze. You want to cough.",
+        "\nYou smother it.",
+        "\nAnd you pass."],
+
+        ["\nYou sync your breath with the drone.",
+        "\nLike a reversed heartbeat.",
+        "\nOn the fifth blade—you jump.",
+        "\nToo early, too late—no one could say.",
+        "\nBut you land on the other side, gasping,",
+        "\na thin cut on your arm like the machine wanted a tribute."],
+
+        [
+        "\nYou read the beams.",
+        "\nCount: six pulses, four pauses, one reset.",
+        "\nYou move. Backtrack. Twist. Crouch.",
+        "\nAt one point, you roll on your back, knees to chin—",
+        "\nand almost laugh at the absurdity of it."
+        ],
+        
+        ["\nYou read the beams.",
+        "\nCount: six pulses, four pauses, one reset.",
+        "\nYou move. Backtrack. Twist. Crouch.",
+        "\nAt one point, you roll on your back, knees to chin—",
+        "\nand almost laugh at the absurdity of it.",
+        "\nYou make it out untouched. Barely winded."],
+        [
+        "\nYou map its angle.",
+        "\nYou craft a thermal decoy: a cracked battery and a warm puddle.",
+        "\nThe drone follows the fake.",
+        "\nYou crawl in the cold, teeth chattering—but silent.",
+        "\nIts lasers graze your back like an accusing finger.",
+        "\nBut you're out. Invisible.",
+        "\nYou gulp down a breath like a hit of something hard."
+        ],
+        [
+        "\nYour hands land on VG-07 like on a frozen corpse.",
+        "\nEverything's tension.",
+        "\nYou feel the internal catches buzz under the shell.",
+        "\nYou exhale. Lock your arms—not your hands.",
+        "\nAnd pull—once. No excess motion.",
+        "\nThe crate is free.",
+        "\nYou don't speak.",
+        "\nYou don't smile.",
+        "\nYou just lay your hand on it—",
+        "\nlike it might hear your thoughts:",
+        "\n'You're mine now.",
+        "And no one knows it yet.'"
+        ]
+      ],
+      "DEXbadscene": [
+        [
+          "You think you can slip through.",
+          "You shoulder in. You force it.",
+          "A cable scrapes your throat.",
+          "Not enough to kill you, just enough to taste metal running down your collar.",
+          "You keep going. But you leave a patch of skin at the entrance."
+        ],
+        [
+          "You set your foot down.",
+          "You know it's fragile.",
+          "But you misjudge the angle.",
+          "A step gives way.",
+          "You tumble down three levels, grab a beam, but your wrist snaps.",
+          "Not broken, but useless for a while."
+        ],
+        [
+          "You inhale too hard.",
+          "Just a breath.",
+          "But it's enough.",
+          "The wall triggers.",
+          "Not the blade. Just a burst of air that pops your audio capsule.",
+          "You go deaf in one ear.",
+          "Silence turns to lead. You keep going, twisted."
+        ],
+        [
+          "You wait for the right moment.",
+          "You think you have it.",
+          "You jump.",
+          "And you make it… but your leg scrapes the blade.",
+          "A sharp hit.",
+          "Fabric torn. Clean blood.",
+          "You're not dead. But you're hurting. And you limp."
+        ],
+        [
+          "You miscalculate the timing.",
+          "A beam hits your knee.",
+          "Nothing triggers right away.",
+          "You think you made it.",
+          "Then you hear a distant click.",
+          "Somewhere, a camera just spotted you.",
+          "A timer starts. You've triggered a countdown.",
+          "You don't know how much time you have left."
+        ],
+        [
+          "You set a decoy.",
+          "But the drone doesn't bite.",
+          "It turns slowly.",
+          "And sees you.",
+          "It doesn't shoot.",
+          "It scans you.",
+          "It records your face.",
+          "Then it moves on.",
+          "You keep going… knowing an eye has recognized you."
+        ],
+        [
+          "You place your fingers.",
+          "You pull too fast. Or too slow. You'll never know.",
+          "The base makes a little 'click'.",
+          "Nothing explodes.",
+          "But the wall screen turns red.",
+          "A word blinks, slowly:",
+          "    TRACKING IN PROGRESS",
+          "You grab the crate.",
+          "But you know you've been seen.",
+          "And what you just did… put a target on your back."
+        ]
+      ],
+      "INTscreenscene": ["billy-inside.png", "level5-door.png", "VG-07-map.png", "costic-room.png", "hote-pipe.png", "maintenance-button.png", "closed-door.png", "VG-07.png"],
+      "INTcontextescene": [
+        [
+          "\n\nYou approach the silo.",
+          "\nAn old badge system flickers weakly, displaying a message 'Level 5 required'.",
+          "\nFrayed cables hang from a half-melted box.",
+          "\nA camera watches you — maybe. Maybe not.",
+          "\nSomething in there is lying."
+        ],
+        [
+          "\n\nIn the control room, a map is displayed on a cracked CRT screen.",
+          "\nThe rooms are labeled, but the layout doesn't match what you see around you.",
+          "\nEvery arrow is contradictory.",
+          "\nA plan… but a trap."
+        ],
+        [
+          "\n\nA corridor covered in acidic steam.",
+          "\nBlack water drips from the ceiling.",
+          "\nYou hear a dull, repetitive hum.",
+          "\nSlippery floor. No direct light.",
+          "\nJust this feeling: if you step in the wrong place, something opens."
+        ],
+        [
+          "\n\nA regular metallic clang accompanies you.",
+          "\nSomewhere in the walls, pressure releases at constant intervals.",
+          "\nA rhythm. A code? Or just an industrial accident never repaired.",
+          "\nYou must move forward. But not just anytime."
+        ],
+        [
+          "\n\nIn front of you: an old terminal.",
+          "\nNo screen. Three levers. Two indicators.",
+          "\nA maintenance diagram scribbled on the wall — modified by hand.",
+          "\nA wrong order here, and it's the system that decides what you're worth."
+        ],
+        [
+          "\n\nA heavy armored door blocks your access.",
+          "\nNot locked. But its hinges are too clean.",
+          "\nSomeone has tinkered with something here.",
+          "\nA mechanical trigger trap? Thermal? You don't know yet."
+        ],
+        [
+          "\n\nThe crate is placed alone on a slab.",
+          "\nToo centered. Too visible.",
+          "\nThere's nothing around. No cables, no apparent mechanism.",
+          "\nBut your instinct screams: it's not just a crate."
+        ]
+      ],
+      "INTgoodscene": [
+        [
+          "\n\nYou identify a thermal wire trap on the wrong entrance.",
+          "\nYou cut it with a cold blade.",
+          "\nA hatch opens on the side: the real entrance."
+        ],
+        [
+          "\n\nYou decrypt the inverted diagram by linking serial numbers to the factory model.",
+          "\nYou draw a new plan by hand, in the grime."
+        ],
+        [
+          "\n\nYou scratch the floor.",
+          "\nFind a trapped tile.",
+          "\nYou toss an empty magazine on it: a spike shoots up.",
+          "\nYou remove the rest with pliers."
+        ],
+        [
+          "\n\nYou catch the rhythm.",
+          "\nAt each 'clong', you move forward.",
+          "\nYou synchronize your movements.",
+          "\nYou pass through the draft without alerting anything."
+        ],
+        [
+          "\n\nYou heat the wall with a lighter, making the ink of the diagram run.",
+          "\nThe arrows reappear.",
+          "\nYou pull the levers in the exact order.",
+          "\nThe indicator turns green."
+        ],
+        [
+          "\n\nYou unscrew a twisted screw on the side of the frame.",
+          "\nYou disable a makeshift detonator using a trapped toy spring."
+        ],
+        [
+          "\n\nYou compare the weight of the crate to your bag.",
+          "\nYou exchange them slowly.",
+          "\nNo alarm. No noise.",
+          "\nYou walk. You exit. You breathe."
+        ]
+      ],
+      "INTbadscene": [
+        [
+          "\n\nYou think the panel is dead.",
+          "\nYou touch it. Dry discharge.",
+          "\nYou have cramps for 15 minutes.",
+          "\nYou've awakened a passive detector."
+        ],
+        [
+          "\n\nYou follow the displayed plan.",
+          "\nIt sends you straight into an empty room...",
+          "\nwhere the walls snap at the slightest vibration.",
+          "\nYou have to flee half-deaf."
+        ],
+        [
+          "\n\nYou walk too fast.",
+          "\nThe steam triggers a makeshift sensor.",
+          "\nA rusty needle pierces your calf.",
+          "\nYou limp to the end."
+        ],
+        [
+          "\n\nYou miss the rhythm.",
+          "\nYou pass between two 'clong'...",
+          "\nand a valve sprays you with corrosive water.",
+          "\nNot deadly. Just... burning."
+        ],
+        [
+          "\n\nYou pull the levers at random.",
+          "\nAn alarm goes off in the walls.",
+          "\nYou rip off the panel to stop it.",
+          "\nToo late. Someone knows you're there."
+        ],
+        [
+          "\n\nYou open the door without checking.",
+          "\nA spring releases a cluster of heated nails.",
+          "\nThree hit you in the side.",
+          "\nYou scream. You continue. But slowly."
+        ],
+        [
+          "\n\nYou touch the crate directly.",
+          "\nThe floor vibrates.",
+          "\nA red light turns on a sensor 20 meters away.",
+          "\nYou have 30 seconds before a drone is awakened."
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Don't shoot, talk",
+      "description": "A deal went wrong.",
+      "contexte": [
+        "\n\nA deal went wrong. Billy lost a batch of X-3 injectors in Sector 3.",
+        "\nLast signal: an old bar named The Viscera, hideout of an unstable guy called Radomir.",
+        "\n\nBilly doesn't want blood. Not yet. He wants you to go there, to 'talk'.",
+        "\nBut you have to be more convincing than the paranoia of the guy in front.",
+        "\n\nBilly:",
+        "\n'If you can make him talk, he'll say where the stock is.",
+        "Otherwise... shoot him in the throat. But only if you really have no choice.'"
+      ],
+      "difficulty": 2,
+      "requiredStats": [true, false, false, false, true, false],
+      "requireresult": 0,
+      "totalsteps": 2,
+      "test": [8, 10],
+      "bonus": [10, 20],
+      "STRscreenscene": ["billy-inside.png", "radomir.png" ],
+      "STRcontextescene": [
+        [
+          "\n\nThe bar is empty. Except for Radomir.",
+          "\nSitting at the back, two guns on the table, chest glistening with body oil.",
+          "\nHe sizes you up from head to toe.",
+          "\n\n'You're not here to drink. You're here to mess with me. Go ahead. Try.'",
+          "\n\nHe stares at you, palm resting on the grip of his gun.",
+          "\nYou say nothing.",
+          "\nYou don't need to."
+        ],
+        [
+          "\n\nYou approach. Slowly.",
+          "\nYour boots creak.",
+          "\nYour shadow stretches over him.",
+          "\nHe doesn't back down.",
+          "\n\n'Do you think you're scary? You're just tall. The taller they are, the harder they fall.'",
+          "\n\nYou feel your blood pounding in your temples.",
+          "\nA movement. A tension. A moment where it all shifts."
+        ]
+      ],
+      "STRgoodscene": [
+        [
+          "\n\nYou grab the table with both hands and flip it over in one swift motion.",
+          "\nThe guns fly.",
+          "\nRadomir steps back, surprised, hitting the wall.",
+          "\n\nYou move forward, chest to chest.",
+          "\n\n'We talk now. And you don't do anything stupid.'"
+        ],
+        [
+          "\n\nYou slam him against the wall.",
+          "\nHis breath reeks of bile and rust.",
+          "\n\n'You can keep your teeth, Radomir. Or leave them on the floor.",
+          "\nIt's your choice if you want to chew tonight.'",
+          "\n\nHe spits to the side. Not at you.",
+          "\nThen he murmurs:",
+          "\n'Fridge. Fake capsule. Don't touch it. Too unstable.'",
+          "\n\nYou release him.",
+          "\nNot because he convinced you.",
+          "\nBecause you've already won."
+        ]
+      ],
+
+      "STRbadscene": [
+        [
+          "\n\nYou overturn the chair.",
+          "\nBut Radomir is quicker.",
+          "\nHe draws his shooter, fires blanks.",
+          "\nThe ceiling bursts.",
+          "\n\n'I thought you were sharper. You're just a brute.'",
+          "\n\nHe laughs. You're bleeding from the ear.",
+          "\nNo serious injury.",
+          "\nBut he's gained the upper hand."
+        ],
+        [
+        [
+          "\n\nYou tackle him.",
+          "\nBut he drives a metal rod into your thigh.",
+          "\nAn old reused injector.",
+          "\n\n'Do you think I trust my arms? I sleep with weapons in my bones.'",
+          "\n\nYou disarm him. But you've lost.",
+          "\nNot the info. Not the fight.",
+          "\nYou've lost the silence.",
+          "\nOthers have heard.",
+          "\nAnd Billy will only get scraps."
+        ]
+        ]
+      ],
+      
+
+      "CHAscreenscene": ["billy-inside.png", "radomir.png" ],
+      "CHAcontextescene": [
+        [
+          "\n\nYou push the bar door. It creaks like a dry throat.",
+          "\nInside, no patrons. Just the harsh light of a flickering neon above the counter.",
+          "\nIn the back, Radomir waits for you.",
+          "\nBare-chested, scars like worms on his skin. Two guns on the table. A sneer in his eyes.",
+          "\n\nHe raises a hand, palm open.",
+          "\n\n'Don't come closer. You want to talk? Talk. But every word you say, I hear it as a threat.'",
+          "\n\nYou remain standing.",
+          "\nSweat trickles down your back."
+        ],
+        [
+          "\n\nYou sit down. Slowly.",
+          "\nHe watches you like a rat watches another prey, not a brother.",
+          "\n\n'Billy sent you? I don't like him. He smells of church and hate.",
+          "\nHe wants his X-3? He should come get them himself.'",
+          "\n\nYou have a window.",
+          "\nTiny.",
+          "\nYou can lie, charm, provoke.",
+          "\nBut every word could trigger a bullet."
+        ]
+      ],
+      "CHAgoodscene": [
+        [
+          "\n\nYou raise your hands, but you speak as if you've already won.",
+          "\n'I have nothing in hand. I don't even want to be here.",
+          "\nBut if I leave without an answer, you won't see the next team.'",
+          "\n\nRadomir squints. He doesn't shoot.",
+          "\nYou move closer.",
+          "\nHe pours you a drink. Not for friendship. To test."
+        ],
+        [
+          "\n\nYou fix him. No smile.",
+          "\n'Billy knows you messed up.",
+          "\nBut he doesn't care.",
+          "\nWhat he wants is the info. If you talk now, he forgets your name. If you insist… you'll have silent visitors.'",
+          "\n\nRadomir watches you. For a long time.",
+          "\nThen he lets out:",
+          "\n'Fridge. Behind the fake capsule. Cold room.'",
+          "\n\nYou stand up.",
+          "\nHe doesn't move.",
+          "\nYou leave. Heart still tight."
+        ]
+      ],
+      "CHAbadscene": [
+        [
+          "\n\nYou sit down immediately. You want to show you're not afraid.",
+          "\nMistake.",
+          "\nRadomir tenses. His hand rests on the gun.",
+          "\n\n'You know why people die here? Because they want to talk fast. You didn't listen.'",
+          "\n\nHe doesn't shoot.",
+          "\nBut the atmosphere is tense.",
+          "\nYou already feel you'll have to push through."
+        ],
+        [
+          "\n\nYou attempt a joke about Billy.",
+          "\nWrong angle.",
+          "\n\n'Billy doesn't like you? Don't worry. He likes no one. Neither do I.'",
+          "\n\nRadomir points at you directly.",
+          "\n'Are you threatening me? You can't even stutter properly.'",
+          "\n\nYou slowly fold your hand under the table.",
+          "\nBut you're caught.",
+          "\nHe fires next to your ear.",
+          "\nTears your jacket. You leave with no info.",
+          "\nAnd a damn bounty on your head."
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "name": "The Black Line",
+      "description": "Billy hands you a black, sealed, unmarked thermal tube. He doesn't look at you when he speaks.",
+      "contexte": [
+        "\n\nBilly:",
+        "\n'Thirty miles into the desert, there's a line.",
+        "An old military antenna still active.",
+        "Not for transmitting. For listening.",
+        "This tube contains a signature jammer.",
+        "You need to connect it. On foot. No transport. No signal.",
+        "You walk. You endure. And you place it at the appointed time.",
+        "Otherwise... they'll know.'",
+        "\n\nHe doesn't explain who 'they' are."
+      ],
+      "difficulty": 5,
+      "requiredStats": [false, false, false, true, false, false],
+      "requireresult": 0,
+      "totalsteps": 1,
+      "test": [17],
+      "bonus": [60],
+      "VITscreenscene": ["billy-inside.png", "desert-tower.png"],
+      "VITcontextescene": [
+        [
+          "\n\nThe desert has no name here.",
+          "\nJust a rumor of a constant breath, as if the earth were trying to exhale something.",
+          "\nMaybe you.",
+          "\n\nYou've been walking for twenty-two kilometers.",
+          "\nYou have no saliva left. You don't sweat anymore.",
+          "\nYour blood is too thick to circulate normally.",
+          "\nYour step is unsteady, not because of the pain — but because it has become normal.",
+          "\n\nThe sky is flat. No stars. Just a metallic membrane, as if the whole world were locked in a box.",
+          "\nAnd each step bangs against the wall.",
+          "\n\nThe thermal tube beats against your hip.",
+          "\nIt makes a sound you don't like.",
+          "\nLike a heartbeat that isn't yours.",
+          "\n\nOn the horizon, you finally see it:",
+          "\nthe surveillance antenna.",
+          "\nA black stake planted in the carcass of the world.",
+          "\n\nHuman carcasses, too.",
+          "\nSilhouettes. Fossilized standing, by the wind, by faith, or by failure.",
+          "\nYou approach. Your inner ear vibrates.",
+          "\nSomething tries to enter your skull.",
+          "\nNot a voice. An idea.",
+          "\n\"Stop there. It's not your weight we want, it's your endurance.\"",
+          "\n\nYou fall to your knees. Not because you falter.",
+          "\nBecause you have to kneel to reach the access hatch.",
+          "\nIt's hot.",
+          "\nIt burns your hand.",
+          "\n\nYou know you have less than a minute before your body gives out.",
+          "\nYou have a line of code in your left ear:",
+          "\n\n    jamming... active... manual required...",
+          "\n    But your finger trembles. Your breath is an old machine.",
+          "\n\nAnd this is where it all plays out."
+        ]
+      ],
+      "VITgoodscene": [
+        [
+          "\n\nYou open the hatch without thinking.",
+          "\nPain is no longer a signal.",
+          "\nIt's just a backdrop.",
+          "\n\nYou connect the tube.",
+          "\nYou feel an electric arc travel up your arm,",
+          "\nand you keep it steady.",
+          "\n\n    jamming synchronized...",
+          "\n    identity erased...",
+          "\n    location: dispersed",
+          "\n\nYour name blinks one last time on the terminal.",
+          "\nThen it goes dark.",
+          "\nAs if it was never there.",
+          "\n\nYou stay for another two minutes. Kneeling.",
+          "\nYou don't know if you passed out.",
+          "\nBut when you open your eyes again,",
+          "\nit's night.",
+          "\nAnd your breath is your own."
+        ]
+      ],
+      "VITbadscene": [
+      [
+        "\n\nYou pull on the hatch.",
+        "\nIt resists.",
+        "\nYour fingers are bleeding.",
+        "\nNot because it's dramatic. Just because it's over.",
+        "\n\nYou plug the tube into the wrong port.",
+        "\nYou know it's the wrong one —",
+        "\nbut you're too far gone to fix it.",
+        "\n\nThe system starts. Then coughs.",
+        "\nThen whistles.",
+        "\nThen screams.",
+        "\n\nA blue light shines on your face.",
+        "\nYou see yourself there, on the screen.",
+        "\nWith your ID. Your history. Your failures.",
+        "\n\nAnd somewhere, someone else sees you too.",
+        "\n\nYou stay there.",
+        "\nNot because you're frozen.",
+        "\nBecause you've been recorded.",
+        "\n\n    You didn't die that day.",
+        "\n    But from that moment on,",
+        "\n    you no longer live for yourself."
+      ]
+      ]
+
+    },
+    {
+      "id": 5,
+      "name": "Cold Mirror",
+      "description": "You will have to understand.",
+      "context": [""],
+      "difficulty": 4,
+      "requiredStats": [false, false, true, false, false, false],
+      "requireresult": 0,
+      "totalsteps": 1,
+      "test": [15],
+      "bonus": [60],
+      "INTscreenscene": ["F.png"],
+      "INTcontextescene": [
+        [
+          "\n\nThe room is bathed in a blue light.",
+          "Not a clean cyber blue.",
+          "A waterless aquarium blue. Of organs on life support. Of absence of truth.",
+          "\n\nYou are in an old laboratory.",
+          "The central room is round, with reflective walls, a semi-open ceiling, and a live electrical wire that flickers in sync with your own heartbeat.",
+          "Not connected to you.",
+          "Just attuned to you.",
+          "As if this place was designed for you, or against you.",
+          "\n\nIn the middle, a chair.",
+          "No blood. No chains. No visible trap.",
+          "\n\nBut on it:",
+          "You.",
+          "An exact copy. Not a plastic clone. Not an AI.",
+          "A living body.",
+          "You breathe. You open your eyes. You look at yourself.",
+          "\n\nAnd the copy speaks before you do.",
+          "\n\n    'They built me with your memories.",
+          "    But not the right ones.",
+          "    Just the ones you hide.",
+          "    And I have a question for you.'",
+          "\n\nYou can't answer. Not yet.",
+          "\n\n    'If I was born from your fear... why am I calmer than you?'",
+          "\n\nYou feel the walls closing in. Not physically. Narratively.",
+          "\n\nThe terminal blinks. Three buttons. No labels.",
+          "Each button changes the life of the copy.",
+          "But also yours.",
+          "\n\n    You know what this is.",
+          "    It's a protocol.",
+          "    A control loop.",
+          "    This laboratory is a test. Or a purge.",
+          "\n\nYou have only one attempt.",
+          "But the trap is not in the fingers.",
+          "It's in what you think you know."
+        ]
+      ],
+      "INTgoodscene": [
+        [
+          "You look at the three buttons.",
+          "You breathe.",
+          "And you understand.",
+          "\n\nThe trap is not in the choice.",
+          "It is in the wording.",
+          "\n\nYou refuse to press.",
+          "You pull the cable. You expose the system's roots.",
+          "You create an infinite logical loop in the program, forcing it to self-annihilate.",
+          "\n\nThe copy looks at you.",
+          "It smiles at you.",
+          "No irony. No challenge.",
+          "A silent thank you.",
+          "\n\nAnd it shuts down.",
+          "Not abruptly. Like a thought fading away.",
+          "\n\nYou remain alone.",
+          "But more yourself.",
+          "You leave.",
+          "Lighter. Not saved. But clear."
+        ]
+      ],
+      "INTbadscene": [
+        [
+          "You analyze the system.\n",
+          "You think you see clearly.\n",
+          "You press.\n",
+          "You choose the least risky button.\n",
+          "\n",
+          "But the system wasn't looking for a good choice.\n",
+          "It was looking for your complacency.\n",
+          "Your ability to believe everything could be resolved with a clean gesture.\n",
+          "\n",
+          "The copy looks at you.\n",
+          "It doesn't move.\n",
+          "But you freeze.\n",
+          "\n",
+          "A code prints behind your eyes.\n",
+          "You realize:\n",
+          "it's you who is the copy.\n",
+          "You just accepted your replacement.\n",
+          "\n",
+          "And the other one stands up.\n",
+          "It blinks.\n",
+          "It walks towards the exit.\n",
+          "\n",
+          "    'Thanks for the test. You weren't indispensable.'\n",
+          "\n",
+          "It leaves.\n",
+          "And you remain.\n",
+          "On.\n",
+          "Aware.\n",
+          "But... deactivated.\n"
+        ]
+      ]
+    }
+  ]
+}

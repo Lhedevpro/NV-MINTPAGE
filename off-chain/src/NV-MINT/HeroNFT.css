@@ -354,5 +354,60 @@
   color: #aaa;
 }
 
+.mint-only-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.mint-title {
+  font-size: 2.5rem;
+  font-family: 'Orbitron', sans-serif;
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff;
+  margin-bottom: 1rem;
+}
+
+.mint-description {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.loading-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  font-size: 1.2rem;
+  color: #00f0ff;
+  text-align: center;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ff4444;
+  border-radius: 4px;
+  background: rgba(255, 68, 68, 0.1);
+}
+
+@media (max-width: 768px) {
+  .mint-title {
+    font-size: 2rem;
+  }
+  
+  .mint-description {
+    font-size: 1rem;
+  }
+}
   
   

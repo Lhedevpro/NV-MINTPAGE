@@ -35,7 +35,7 @@ function HeroNFT() {
       params: [{ chainId: '0x18c6' }]
     });
     } catch (switchError) {
-        // si MegaETH n’est pas encore ajouté, alors on le propose
+        // si MegaETH n'est pas encore ajouté, alors on le propose
         if (switchError.code === 4902) {
         await window.ethereum.request({
             method: 'wallet_addEthereumChain',
@@ -70,6 +70,10 @@ function HeroNFT() {
             if (!window.ethereum) {
                 throw new Error("Please install Metamask");
             }
+            if (typeof window.ethereum === 'undefined') {
+                alert("Please open this page in MetaMask mobile browser.");
+            }
+
 
             await checkNetwork();
 
@@ -219,11 +223,25 @@ function HeroNFT() {
             ></div>
 
             {!account ? (
-                <button onClick={connectWallet} className="explore-btn">
-                    Connect Metamask
-                </button>
+                <div className="mint-only-view">
+                    <button onClick={connectWallet} className="explore-btn">
+                        Connect Metamask
+                    </button>
+                </div>
+            ) : !hasHero ? (
+                // Vue simplifiée : seulement le bouton de mint
+                <div className="mint-only-view">
+                    <h2 className="mint-title">Mint Your First Hero</h2>
+                    <p className="mint-description">
+                        You need to mint a hero before accessing the full Neon Verge experience.
+                    </p>
+                    <button onClick={mintHero} disabled={loading} className="explore-btn">
+                        {loading ? 'Minting...' : 'Mint a Hero'}
+                    </button>
+                    {error && <p className="error-message">{error}</p>}
+                </div>
             ) : isMobile ? (
-            // Version mobile ici
+            // Version mobile ici (utilisateur a un héros)
             hasHero && heroStats ? (
             <div className="hero-mobile">
             <h2 className="hero-name-mobile">{heroName}</h2>
@@ -302,12 +320,10 @@ function HeroNFT() {
                         </div>
                     </div>
                 ) : (
-                    <button onClick={mintHero} disabled={loading} className="explore-btn">
-                    {loading ? 'Minting...' : 'Mint a Hero'}
-                    </button>
+                    <div className="loading-view">Loading hero data...</div>
                 )
             ) : (
-                // Version desktop (ton layout actuel)
+                // Version desktop (ton layout actuel) - utilisateur a un héros
                 <>
                     <div>
                         <ScenarioSlide />
@@ -364,7 +380,7 @@ function HeroNFT() {
                         </div>
                     </div>
 
-                    {hasHero && heroStats ? (
+                    {heroStats ? (
                         <div className="left-panel">
                             <div className="hero-left">
                                 <div className="hero-name-container">
@@ -393,9 +409,7 @@ function HeroNFT() {
                     ) : (
                         <div className="left-panel">
                             <div className="hero-left">
-                                <button onClick={mintHero} disabled={loading} className="explore-btn">
-                                    {loading ? 'Minting...' : 'Mint a Hero'}
-                                </button>
+                                <div className="loading-view">Loading hero data...</div>
                             </div>
                         </div>
                     )}

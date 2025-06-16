@@ -1,0 +1,98 @@
+.nv-terminal {
+    background-color: rgba(4, 201, 236, 0.151);
+    border: 1px solid #00ffff;
+    border-radius: 5px;
+    padding: 20px;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    margin: 20px;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 400px; /* ou adapte selon ton besoin */
+    font-size: 1em;
+}
+
+.nv-terminal pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #00ffff;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    font-size: 1em;
+}
+
+.nv-terminal-btn {
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    align-self: flex-end;
+}
+
+.nv-terminal-btn:hover:not(:disabled) {
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+.nv-terminal-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.cursor {
+    color: #00ffff;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.loading-dots-centered {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #00ffff;
+    font-family: 'Orbitron', 'Courier New', monospace;
+    letter-spacing: 2px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 8px;
+    z-index: 1000;
+    min-height: 200px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.loading-dots-centered .dot {
+    animation: loadingDots 1.4s infinite;
+    opacity: 0;
+    font-weight: bold;
+}
+.loading-dots-centered .dot:nth-child(2) { animation-delay: 0.2s; }
+.loading-dots-centered .dot:nth-child(3) { animation-delay: 0.4s; }
+.loading-dots-centered .dot:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes loadingDots {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.terminal-frame {
+    margin: 0 auto;
+    margin-left: 100px;
+    margin-bottom: 100px;
+} 

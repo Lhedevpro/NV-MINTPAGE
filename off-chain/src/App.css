@@ -119,3 +119,51 @@ main {
     transform: rotate(360deg);
   }
 }
+
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: 2rem;
+}
+
+.nav-button {
+  background: linear-gradient(90deg, #00f0ff 0%, #00ff99 100%);
+  color: #181c24;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 2.2rem;
+  font-family: 'Orbitron', 'Courier New', monospace;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 12px #00f0ff88, 0 0 2px #00ff99;
+  cursor: pointer;
+  transition: 
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s,
+    transform 0.1s;
+  outline: none;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-button.active,
+.nav-button:focus,
+.nav-button:hover {
+  background: linear-gradient(90deg, #00ff99 0%, #00f0ff 100%);
+  color: #fff;
+  box-shadow: 0 0 24px #00f0ffcc, 0 0 8px #00ff99;
+  transform: scale(1.07);
+}
+
+@media (max-width: 700px) {
+  .nav-menu {
+    gap: 0.5rem;
+    margin-left: 0;
+  }
+  .nav-button {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+  }
+}

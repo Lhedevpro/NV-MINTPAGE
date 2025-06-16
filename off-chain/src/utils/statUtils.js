@@ -1,0 +1,1 @@
+export const statNames = ["Strength", "Dexterity", "Intelligence", "Vitality", "Charisma", "Luck"]; 

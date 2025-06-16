@@ -1,0 +1,88 @@
+.terminal-mobile-frame {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nv-terminal-mobile {
+    width: 95vw;
+    max-width: 500px;
+    min-height: 200px;
+    max-height: 700px;
+    background-color: rgba(4, 201, 236, 0.151);
+    border: 1.5px solid #00ffff;
+    border-radius: 8px;
+    box-shadow: 0 0 24px #00ffff33;
+    padding: 24px 12px 32px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.nv-terminal-mobile pre {
+    color: #00ffff;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1em;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-y: auto;
+    flex: 1 1 auto;
+    margin: 0;
+    background: transparent;
+    text-align: left;
+}
+
+.cursor-mobile {
+    color: #00ffff;
+    font-size: 1.3rem;
+    animation: blink 1s steps(1) infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.nv-terminal-mobile-btn {
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    color: #00ffff;
+    padding: 12px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 24px;
+    font-size: 1.1em;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    align-self: flex-end;
+}
+
+.nv-terminal-mobile-btn:hover:not(:disabled) {
+    background-color: rgba(0, 255, 255, 0.2);
+}
+
+.nv-terminal-mobile-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    .nv-terminal-mobile {
+        min-height: 50vh;
+        padding-bottom: 60px;
+    }
+    .nv-terminal-mobile-btn {
+        font-size: 1em;
+        padding: 12px 0;
+    }
+} 
