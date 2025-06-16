@@ -9,7 +9,7 @@ const port = process.env.PORT || 3001;
 
 // Configuration CORS
 app.use(cors({
-    origin: '*',
+    origin: ['https://nv-mintpage-v9xa.vercel.app/', 'https://api-codex-h76c.onrender.com', 'http://localhost:3000'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
