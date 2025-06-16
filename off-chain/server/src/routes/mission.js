@@ -5,28 +5,6 @@ const missionsConfig = require('../config/missions.json');
 const path = require('path');
 const fs = require('fs').promises;
 
-// Configuration CORS
-router.use((req, res, next) => {
-    const allowedOrigins = [
-        'http://localhost:3000',
-        'https://nv-mintpage-v9xa.vercel.app'
-    ];
-    
-    const origin = req.headers.origin;
-    if (allowedOrigins.includes(origin)) {
-        res.header('Access-Control-Allow-Origin', origin);
-    }
-    
-    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    
-    // Gérer les requêtes OPTIONS pour le preflight
-    if (req.method === 'OPTIONS') {
-        return res.status(200).end();
-    }
-    
-    next();
-});
 
 // Route de test
 router.get('/test', (req, res) => {
