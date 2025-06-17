@@ -325,8 +325,34 @@ function HeroNFT() {
             ) : (
                 // Version desktop (ton layout actuel) - utilisateur a un héros
                 <>
-                    <div>
-                        <ScenarioSlide />
+                    <div className="hero-centered-desktop">
+                        {heroStats ? (
+                            <>
+                                <div className="hero-name-container">
+                                    <h2 className="hero-name">{heroName}</h2>
+                                </div>
+                                <div className={`hero-image-wrapper ${rarityClass}`} style={{ margin: '0 auto' }}>
+                                    <img
+                                        src={`/imgs/${heroStats.imgId}.png`}
+                                        alt={`Hero ${heroStats.name}`}
+                                        className="hero-image"
+                                    />
+                                </div>
+                                <div className="hero-stats">
+                                    <p>Class: {getClass(heroStats.class)}</p>
+                                    <div className="stats-grid">
+                                        <p>STR: {heroStats.STR}</p>
+                                        <p>DEX: {heroStats.DEX}</p>
+                                        <p>INT: {heroStats.INT}</p>
+                                        <p>VIT: {heroStats.VIT}</p>
+                                        <p>CHA: {heroStats.CHA}</p>
+                                        <p>LCK: {heroStats.LCK}</p>
+                                    </div>
+                                </div>
+                            </>
+                        ) : (
+                            <div className="loading-view">Loading hero data...</div>
+                        )}
                     </div>
 
                     <div className="project-explainer">
@@ -379,40 +405,6 @@ function HeroNFT() {
                             </p>
                         </div>
                     </div>
-
-                    {heroStats ? (
-                        <div className="left-panel">
-                            <div className="hero-left">
-                                <div className="hero-name-container">
-                                    <h2 className="hero-name">{heroName}</h2>
-                                </div>
-                                <div className={`hero-image-wrapper ${rarityClass}`}>
-                                    <img
-                                        src={`/imgs/${heroStats.imgId}.png`}
-                                        alt={`Hero ${heroStats.name}`}
-                                        className="hero-image"
-                                    />
-                                </div>
-                                <div className="hero-stats">
-                                    <p>Class: {getClass(heroStats.class)}</p>
-                                    <div className="stats-grid">
-                                        <p>STR: {heroStats.STR}</p>
-                                        <p>DEX: {heroStats.DEX}</p>
-                                        <p>INT: {heroStats.INT}</p>
-                                        <p>VIT: {heroStats.VIT}</p>
-                                        <p>CHA: {heroStats.CHA}</p>
-                                        <p>LCK: {heroStats.LCK}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ) : (
-                        <div className="left-panel">
-                            <div className="hero-left">
-                                <div className="loading-view">Loading hero data...</div>
-                            </div>
-                        </div>
-                    )}
                 </>
             )}
         </div>

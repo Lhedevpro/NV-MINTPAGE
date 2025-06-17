@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
-  const [activePage, setActivePage] = useState('codex'); // 'codex' ou 'mint'
+  const [activePage, setActivePage] = useState('mint'); // 'codex' ou 'mint'
   
   useEffect(() => {
     const handleResize = () => {

@@ -22,6 +22,6 @@ export const getItemValue = (index, inventory, heroRecords) => {
 
 export const calculatePoints = (victories) => {
     return victories.reduce((total, victory, index) => {
-        return total + (victory * (index + 1));
+        return total + victory;
     }, 0);
 }; 

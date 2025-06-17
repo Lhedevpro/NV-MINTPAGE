@@ -137,7 +137,7 @@
   /* ✅ Lore */
   .project-explainer {
   max-width: 800px;
-  margin: 500px auto 2rem auto; /* top / sides auto / bottom */
+  margin: 50px auto 2rem auto; /* top / sides auto / bottom */
   padding: 2rem;
   text-align: center;
 
@@ -409,5 +409,20 @@
     font-size: 1rem;
   }
 }
+
+.hero-centered-desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Optionnel : on peut masquer .left-panel si jamais il reste dans le DOM */
+/*.left-panel {
+  display: none !important;
+}*/
   
   
