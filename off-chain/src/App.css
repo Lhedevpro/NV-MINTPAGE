@@ -70,13 +70,46 @@
 }
 
 .App-header2 {
-  height: 50px;
-  padding: 2rem;
+  height: 40px;
+  padding: 2.5rem 2rem 2.5rem 2rem;
   background-color: #1a1d24;
   background: rgba(0, 0, 0, 0.35);
   border-bottom: 2px solid rgba(0, 255, 255, 0.2);
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
   backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.header-logo-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.App-logo2 {
+  display: block;
+  height: 110px;
+  width: auto;
+  margin: 0;
+  filter: drop-shadow(0 0 6px #00f0ff);
+  pointer-events: none;
+}
+
+.nav-menu {
+  z-index: 3;
+}
+
+.wallet-info {
+  z-index: 3;
 }
 
 .App-header h1 {
@@ -166,4 +199,266 @@ main {
     padding: 0.5rem 1.2rem;
     font-size: 1rem;
   }
+  .App-header2 {
+    flex-direction: column;
+    height: auto;
+    gap: 1rem;
+    padding: 1.5rem 0.5rem;
+  }
+  .header-logo-center {
+    position: static;
+    transform: none;
+    margin-bottom: 1rem;
+  }
+  .App-logo2 {
+    height: 70px;
+  }
+}
+
+/* Styles pour la page de connexion MetaMask */
+.metamask-connect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.connect-container {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+.connect-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.connect-logo {
+  height: 80px;
+  width: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 6px #00f0ff);
+}
+
+.connect-header h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.connect-header p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.connect-content {
+  text-align: center;
+}
+
+.connect-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.connect-button {
+  background: linear-gradient(90deg, #00f0ff 0%, #00ff99 100%);
+  color: #181c24;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-family: 'Orbitron', 'Courier New', monospace;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.connect-button:hover:not(:disabled) {
+  background: linear-gradient(90deg, #00ff99 0%, #00f0ff 100%);
+  color: #fff;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.connect-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  border-radius: 8px;
+  padding: 1rem;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+}
+
+.metamask-info {
+  margin-top: 1rem;
+}
+
+.metamask-info p {
+  color: #ccc;
+  margin-bottom: 0.5rem;
+}
+
+.metamask-link {
+  color: #00f0ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.metamask-link:hover {
+  color: #00ff99;
+  text-shadow: 0 0 5px #00ff99;
+}
+
+.connected-status {
+  text-align: center;
+}
+
+.success-message {
+  background: rgba(0, 255, 0, 0.2);
+  border: 1px solid rgba(0, 255, 0, 0.5);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.success-message p {
+  color: #00ff99;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.account-address {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #00f0ff !important;
+}
+
+/* Styles pour les informations de wallet dans le header */
+.wallet-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.account-display {
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: #00f0ff;
+}
+
+.disconnect-button {
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.disconnect-button:hover {
+  background: rgba(255, 0, 0, 0.3);
+  border-color: rgba(255, 0, 0, 0.7);
+}
+
+/* Styles pour le loader de chargement */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 2rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(0, 255, 255, 0.3);
+  border-top: 3px solid #00f0ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-container p {
+  color: #00f0ff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px #00f0ff;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Styles pour les messages de connexion et héros requis */
+.connect-required,
+.hero-required {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.connect-message,
+.hero-message {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+  text-align: center;
+}
+
+.connect-message h2,
+.hero-message h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.connect-message p,
+.hero-message p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.hero-message p:last-child {
+  color: #00ff99;
+  font-weight: bold;
+  margin-top: 1.5rem;
 }

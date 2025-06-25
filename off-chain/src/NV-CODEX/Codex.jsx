@@ -13,6 +13,7 @@ import StatSelection from './Codex/StatSelection';
 import { getClass } from '../utils/heroUtils';
 import { getItemName, getItemValue, calculatePoints } from '../utils/inventoryUtils';
 import { statNames } from '../utils/statUtils';
+import { useMetaMask } from '../context/MetaMaskContext';
 
 const STRINGS = {
     LOADING: 'Loading...',
@@ -51,7 +52,7 @@ const LoadingDots = ({ message = "Loading" }) => (
 );
 
 function Codex() {
-    const [account, setAccount] = useState(null);
+    const { account, isConnected } = useMetaMask();
     const [hasHero, setHasHero] = useState(false);
     const [heroStats, setHeroStats] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -93,6 +94,17 @@ function Codex() {
     const [loadingMessage, setLoadingMessage] = useState('');
     const [missionScreens, setMissionScreens] = useState([]);
     const [currentSceneImage, setCurrentSceneImage] = useState(null);
+
+    // Vérifier la propriété du héros quand l'account change
+    useEffect(() => {
+        if (account && isConnected) {
+            checkHeroOwnership(account);
+        } else {
+            setHasHero(false);
+            setHeroStats(null);
+            setSlots(Array(10).fill(null));
+        }
+    }, [account, isConnected]);
 
     // Ajout d'un intervalle pour vérifier les signatures en attente
     useEffect(() => {
@@ -171,50 +183,6 @@ function Codex() {
         const network = await provider.getNetwork();
         if (network.chainId !== 31337n) {
             await switchToMegaeth();
-        }
-    };
-
-    const connectWallet = async () => {
-        try {
-            if (!window.ethereum) {
-                throw new Error("Please install Metamask");
-            }
-            if (typeof window.ethereum === 'undefined') {
-                alert("Please open this page in MetaMask mobile browser.");
-            }
-
-            await checkNetwork();
-
-            const accounts = await window.ethereum.request({ 
-                method: 'eth_requestAccounts' 
-            });
-            
-            if (accounts.length === 0) {
-                throw new Error("No account found");
-            }
-
-            setAccount(accounts[0]);
-            await checkHeroOwnership(accounts[0]);
-
-            window.ethereum.on('accountsChanged', (newAccounts) => {
-                if (newAccounts.length === 0) {
-                    setAccount('');
-                    setHasHero(false);
-                    setHeroStats(null);
-                    setSlots(Array(10).fill(0));
-                } else {
-                    setAccount(newAccounts[0]);
-                    checkHeroOwnership(newAccounts[0]);
-                }
-            });
-
-            window.ethereum.on('chainChanged', () => {
-                window.location.reload();
-            });
-
-        } catch (err) {
-            console.error("Connection error:", err);
-            setError(err.message);
         }
     };
 
@@ -1148,7 +1116,22 @@ function Codex() {
 
             {isLoading ? (
                 <LoadingDots message={loadingMessage || "Loading"} />
-            ) : account && hasHero && (
+            ) : !isConnected ? (
+                <div className="connect-required">
+                    <div className="connect-message">
+                        <h2>Connexion requise</h2>
+                        <p>Veuillez vous connecter avec MetaMask pour accéder au Codex.</p>
+                    </div>
+                </div>
+            ) : !hasHero ? (
+                <div className="hero-required">
+                    <div className="hero-message">
+                        <h2>Héros requis</h2>
+                        <p>Vous devez d'abord mint un héros pour accéder au Codex.</p>
+                        <p>Rendez-vous sur la page Mint pour créer votre premier héros.</p>
+                    </div>
+                </div>
+            ) : (
                 <>
                     <Inventory slots={slots} heroRecords={heroRecords} />
 
@@ -1240,12 +1223,6 @@ function Codex() {
                         </div>
                     )}
                 </>
-            )}
-
-            {!account && !isLoading && (
-                <button onClick={connectWallet} className="explore-btn">
-                    {STRINGS.CONNECT_METAMASK}
-                </button>
             )}
         </div>
     );

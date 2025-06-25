@@ -4,9 +4,10 @@ import RewardHeroNFT from '../contracts/RewardHeroNFT.json';
 import { getContract } from '../connect';
 import './HeroNFT.css';
 import ScenarioSlide from './ScenarioSlide';
+import { useMetaMask } from '../context/MetaMaskContext';
 
 function HeroNFT() {
-    const [account, setAccount] = useState('');
+    const { account, isConnected } = useMetaMask();
     const [hasHero, setHasHero] = useState(false);
     const [heroStats, setHeroStats] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -25,8 +26,15 @@ function HeroNFT() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    
-
+    // Vérifier la propriété du héros quand l'account change
+    useEffect(() => {
+        if (account && isConnected) {
+            checkHeroOwnership(account);
+        } else {
+            setHasHero(false);
+            setHeroStats(null);
+        }
+    }, [account, isConnected]);
 
     const switchToMegaeth = async () => {
         try {
@@ -62,53 +70,6 @@ function HeroNFT() {
         const network = await provider.getNetwork();
         if (network.chainId !== 31337n) {
             await switchToMegaeth();
-        }
-    };
-
-    const connectWallet = async () => {
-        try {
-            if (!window.ethereum) {
-                throw new Error("Please install Metamask");
-            }
-            if (typeof window.ethereum === 'undefined') {
-                alert("Please open this page in MetaMask mobile browser.");
-            }
-
-
-            await checkNetwork();
-
-            const accounts = await window.ethereum.request({ 
-                method: 'eth_requestAccounts' 
-            });
-            
-            if (accounts.length === 0) {
-                throw new Error("No account found");
-            }
-
-            console.log("Connected account:", accounts[0]);
-            setAccount(accounts[0]);
-            checkHeroOwnership(accounts[0]);
-
-            window.ethereum.on('accountsChanged', (newAccounts) => {
-                console.log("Account changed:", newAccounts);
-                if (newAccounts.length === 0) {
-                    setAccount('');
-                    setHasHero(false);
-                    setHeroStats(null);
-                } else {
-                    setAccount(newAccounts[0]);
-                    checkHeroOwnership(newAccounts[0]);
-                }
-            });
-
-            window.ethereum.on('chainChanged', (chainId) => {
-                console.log("Network changed:", chainId);
-                window.location.reload();
-            });
-
-        } catch (err) {
-            console.error("Connection error:", err);
-            setError(err.message);
         }
     };
 
@@ -162,7 +123,6 @@ function HeroNFT() {
         }
     };
 
-
     const mintHero = async () => {
         try {
             setLoading(true);
@@ -212,7 +172,6 @@ function HeroNFT() {
         }
     };
 
-    
     const rarityClass = heroStats ? `rarity-${heroStats.rarity}` : '';
 
     return (
@@ -222,11 +181,12 @@ function HeroNFT() {
                 style={{ backgroundImage: "url('/imgs/Fond.png')" }}
             ></div>
 
-            {!account ? (
-                <div className="mint-only-view">
-                    <button onClick={connectWallet} className="explore-btn">
-                        Connect Metamask
-                    </button>
+            {!isConnected ? (
+                <div className="connect-required">
+                    <div className="connect-message">
+                        <h2>Connexion requise</h2>
+                        <p>Veuillez vous connecter avec MetaMask pour accéder à la page Mint.</p>
+                    </div>
                 </div>
             ) : !hasHero ? (
                 // Vue simplifiée : seulement le bouton de mint
