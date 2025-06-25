@@ -1119,16 +1119,16 @@ function Codex() {
             ) : !isConnected ? (
                 <div className="connect-required">
                     <div className="connect-message">
-                        <h2>Connexion requise</h2>
-                        <p>Veuillez vous connecter avec MetaMask pour accéder au Codex.</p>
+                        <h2>Connection Required</h2>
+                        <p>Please connect with MetaMask to access the Codex.</p>
                     </div>
                 </div>
             ) : !hasHero ? (
                 <div className="hero-required">
                     <div className="hero-message">
-                        <h2>Héros requis</h2>
-                        <p>Vous devez d'abord mint un héros pour accéder au Codex.</p>
-                        <p>Rendez-vous sur la page Mint pour créer votre premier héros.</p>
+                        <h2>Hero Required</h2>
+                        <p>You must first mint a hero to access the Codex.</p>
+                        <p>Go to the Mint page to create your first hero.</p>
                     </div>
                 </div>
             ) : (
